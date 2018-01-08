@@ -1,10 +1,11 @@
 
     		var badinputcolor = "#F7819F";
-    		var formelements = [];
+    		// formelements array is used to check if all form elements pass the validation function
+		var formelements = [];
     			formelements['firstanme'] 	= false;
     			formelements['lastname'] 	= false;
     			formelements['email'] 		= false;
-
+		
     		function all_form_elements_good(){
     			
     			if (formelements['firstname']&&formelements['lastname']&&formelements['email'])
@@ -32,7 +33,7 @@
     		}
 
     		function check_textbox_string (textbox_string){
-
+		// Checks if textbox string length is lower than 4 character or has special characters
                 if ((textbox_string.trim().length<4) || (/^[a-zA-Z0-9- ]*$/.test(textbox_string) == false))
     			{
     				return false
@@ -45,9 +46,9 @@
 
 
     		function check_textbox(formelementid) {
-    		
+    		// Get the value from checkbox
     		string_for_check = document.getElementById(formelementid).value;
-
+		// Data validation
     		if (check_textbox_string(string_for_check) == false) {
 				    
 					document.getElementById(formelementid).style.backgroundColor = badinputcolor;
